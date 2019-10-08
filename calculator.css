@@ -1,0 +1,332 @@
+.mainContainer {
+   display: flex;
+   flex-direction: column;
+   width: 90%;
+   align-items: center;
+}
+
+.mainCalculatorContainer {
+   display: grid;
+   grid-template-rows: repeat(42, 1fr);
+   grid-template-columns: repeat(35, 1fr);
+   border: 2px solid black;
+   border-radius: 5px;
+   width: 720px;
+   height: 840px;
+}
+
+/* Top Outer Border */
+.outerBorder1 {
+   grid-column: 1/36;
+   grid-row: 1/2;
+   background-color: darkgray;
+}
+
+/* Bottom Outer Border */
+.outerBorder2 {
+   grid-column: 1/36;
+   grid-row: 42/43;
+   background-color: darkgray;
+}
+
+/* Left Outer Border */
+.outerBorder3 {
+   grid-column: 1/2;
+   grid-row: 1/43;
+   background-color: darkgray;
+}
+
+/* Right Outer Border */
+.outerBorder4 {
+   grid-column: 35/36;
+   grid-row: 1/43;
+   background-color: darkgray;
+}
+
+/* Top Inner Border */
+.innerBorder1 {
+   grid-column: 2/35;
+   grid-row: 2/3;
+   background-color: lightgray;
+}
+
+/* Bottom Inner Border */
+.innerBorder2 {
+   grid-column: 2/35;
+   grid-row: 41/42;
+   background-color: lightgray;
+}
+
+/* Left Inner Border */
+.innerBorder3 {
+   grid-column: 2/3;
+   grid-row: 2/41;
+   background-color: lightgray;
+}
+
+/* Right Inner Border */
+.innerBorder4 {
+   grid-column: 34/35;
+   grid-row: 2/42;
+   background-color: lightgray;
+}
+
+/* Numeric Scratch Pad */
+.scratchPad {
+   grid-column: 4/33;
+   grid-row: 4/9;
+   background-color: white;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 6em;
+}
+
+/* MC Function Button */
+.function1 {
+   grid-column: 4/9;
+   grid-row: 11/16;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* MR Function Button */
+.function2 {
+   grid-column: 10/15;
+   grid-row: 11/16;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* M+ Function Button */
+.function3 {
+   grid-column: 16/21;
+   grid-row: 11/16;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* M- Function Button */
+.function4 {
+   grid-column: 22/27;
+   grid-row: 11/16;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* CD Function Button */
+.function5 {
+   grid-column: 28/33;
+   grid-row: 11/16;
+   background-color: lightcoral;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* 7 Button */
+.numeric7 {
+   grid-column: 4/9;
+   grid-row: 17/22;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 8 Button */
+.numeric8 {
+   grid-column: 10/15;
+   grid-row: 17/22;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 9 Button */
+.numeric9 {
+   grid-column: 16/21;
+   grid-row: 17/22;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 4 Button */
+.numeric4 {
+   grid-column: 4/9;
+   grid-row: 23/28;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 5 Button */
+.numeric5 {
+   grid-column: 10/15;
+   grid-row: 23/28;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 6 Button */
+.numeric6 {
+   grid-column: 16/21;
+   grid-row: 23/28;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 1 Button */
+.numeric1 {
+   grid-column: 4/9;
+   grid-row: 29/34;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 2 Button */
+.numeric2 {
+   grid-column: 10/15;
+   grid-row: 29/34;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 3 Button */
+.numeric3 {
+   grid-column: 16/21;
+   grid-row: 29/34;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* 0 Button */
+.numeric0 {
+   grid-column: 4/9;
+   grid-row: 35/40;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* Decimal Button */
+.decimal {
+   grid-column: 10/15;
+   grid-row: 35/40;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 5em;
+}
+
+/* Decimal Button */
+.plusMinus {
+   grid-column: 16/21;
+   grid-row: 35/40;
+   background-color: lightskyblue;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* Division Function Button */
+.division {
+   grid-column: 22/27;
+   grid-row: 17/22;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* Square Root Function Button */
+.squareRoot {
+   grid-column: 28/33;
+   grid-row: 17/22;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* Multiplication Function Button */
+.multiplication {
+   grid-column: 22/27;
+   grid-row: 23/28;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* Percentage Function Button */
+.percent {
+   grid-column: 28/33;
+   grid-row: 23/28;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* Subtraction Function Button */
+.minus {
+   grid-column: 22/27;
+   grid-row: 29/34;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* Inverse Function Button */
+.inverse {
+   grid-column: 28/33;
+   grid-row: 29/34;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* Addition Function Button */
+.plus {
+   grid-column: 22/27;
+   grid-row: 35/40;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
+
+/* Equals Function Button */
+.equal {
+   grid-column: 28/33;
+   grid-row: 35/40;
+   background-color: lightgreen;
+   border: 2px solid black;
+   border-radius: 5px;
+   font-size: 3em;
+}
