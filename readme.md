@@ -21,8 +21,12 @@
    Negative and decimal answers work too even though I have not added in the functionality
       for the user to choose those options from the keyboard.
 
-# Version 5:
+# Version 6:
    - Add Square Root, %, inverse. DONE
+
+# Version 7:
+   Add in divide by zero error checking. DONE.
+   Also added in color changes for the error.
 
 
 Functionality to add:
@@ -34,6 +38,7 @@ Functionality to add:
    Decimals
 
 
-
 Cleanup Items:
+   Limit display to a certain number of digits so they don't run out the side of
+      the scratchpad
    Move display in scratchpad to the right side

@@ -330,3 +330,8 @@
    border-radius: 5px;
    font-size: 3em;
 }
+
+.redText {
+   color: white;
+   background-color: red;
+}
