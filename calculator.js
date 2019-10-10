@@ -150,7 +150,12 @@ var app = {
       app.render(answer)
    },
    div: () => {
-      answer = numA / numB
+      if (numB === 0) {
+         answer = 'Error'
+      }
+      else {
+         answer = numA / numB
+      }
       app.render(answer)
    },
    root: () => {
@@ -167,8 +172,17 @@ var app = {
    },
    // Update the scratchpad
    render: (num) => {
-      display = document.querySelector('.scratchPad')
-      display.textContent = num
+      if (num === 'Error') {
+         display = document.querySelector('.scratchPad')
+         display.classList.toggle('redText')
+         display.textContent = num
+      }
+      else {
+         display = document.querySelector('.scratchPad')
+         display.classList.remove('redText')
+         display.textContent = num
+      }
+
    }
 }
 
