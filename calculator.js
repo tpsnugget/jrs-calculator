@@ -1,72 +1,56 @@
 var data = document.querySelector('.mainCalculatorContainer')
 var num = 0
+var answer = 0
 var memory = 0
+var numDigits = 0
+var numBuffer = []
 var state = 'initial'
-var numA = false
-var numB = false
+var numA = 0
+var numB = 0
 var numALeft = false
 var numARight = false
 var numBLeft = false
 var numBRight = false
+var display = ''
 
 var e = data.addEventListener('click', (e) => {
 
    var button = e.target.textContent
-   console.log(button)
 
-   // if (e.target.className.includes(state)) {
-   //    if (state === 'initial') {
-   //       if (button === '1' || button === '2' || button === '3' || button === '4' ||
-   //           button === '5' || button === '6' || button === '7' || button === '8' || button === '9') {
-                
-   //           }
-   //    }
-   //    else if (state === 'numALeft') {
+   if (button === '1' || button === '2' || button === '3' || button === '4' || button === '5' ||
+      button === '6' || button === '7' || button === '8' || button === '9' || button === '0') {
 
-   //    }
-   //    console.log(e.target.textContent + ' is a legal button press in the ' + state + ' state: ', e.target.className.includes('initial'))
-   // }
-   // else {
-   //    console.log(e.target.textContent + ' is NOT a legal button press in the ' + state + ' state: ')
-   // }
-
-   switch (button) {
-      case 'CE': app.zeroNum()
-         console.log('I just zeroed out num')
-         break
-      case '1':
-         app.render(button)
-         num += Number(button)
-         break
-      case '2':
-      app.render(button)
-         break
-      case '3':
-      app.render(button)
-         break
-      case '4':
-      app.render(button)
-         break
-      case '5':
-      app.render(button)
-         break
-      case '6':
-      app.render(button)
-         break
-      case '7':
-      app.render(button)
-         break
-      case '8':
-      app.render(button)
-         break
-      case '9':
-      app.render(button)
-         break
-      case '.':
-         break
-      default:
+      // Create integer
+      // 1 is in the ones column
+      // 12 one moves to tens column and 2 is in ones column
+      // 123 one moves to hundreds, two to tens, 3 to ones column
+         numBuffer.push(Number(button))
+         app.num(numBuffer)
+         app.render(num)
+         console.log('I am in the number section')
    }
-   // console.log('num is: ', num)
+   else if (button === '.') {
+      // Shift to decimal mode
+   }
+   else if (button === '+') {
+      // change state
+      state = 'add'
+      app.num(numBuffer)
+      numA = num
+      numBuffer = []
+      app.render(numA)
+      console.log('numA is : ', numA)
+   }
+   else if (button === '=') {
+      state = 'equal'
+      app.num(numBuffer)
+      numB = num
+      numBuffer = []
+      app.render(num)
+      app.add()
+      console.log('numB is : ', numB)
+   }
+
 })
 
 var app = {
@@ -78,9 +62,23 @@ var app = {
       num = 0
       app.initState()
    },
+   num: (numBuffer) => {
+      // numBuffer is [7, 8, 9]
+      num = 0
+      var count = numBuffer.length
+      var power = 0
+      for (var i = count - 1; i >= 0; i--) {
+         num += numBuffer[i] * Math.pow(10, power)
+         power += 1
+      }
+   },
+   add: () => {
+      answer = numA + numB
+      app.render(answer)
+   },
    // Update the scratchpad
    render: (num) => {
-      var display = document.querySelector('.scratchPad')
+      display = document.querySelector('.scratchPad')
       display.textContent = num
    }
 }

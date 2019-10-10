@@ -8,4 +8,9 @@
 # Version 3:
    Looks like I was way overthinking this for now. Don't need to worry about error
    checking yet. Just get basic functionality working.
-   Will try to get the scratchpad to update for single number pushes.
+   Will try to get the scratchpad to update for single number pushes. DONE.
+
+# Version 4:
+   - Work on correctly processing an integer number. DONE.
+   - Work on adding an integer to another single integer and display that
+      in the scratchpad. DONE.
