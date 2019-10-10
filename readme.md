@@ -14,3 +14,7 @@
    - Work on correctly processing an integer number. DONE.
    - Work on adding an integer to another single integer and display that
       in the scratchpad. DONE.
+
+# Version 5:
+   Add in CE functionality. DONE.
+   Add in -, *, and /. DONE.

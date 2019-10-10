@@ -32,9 +32,22 @@ var e = data.addEventListener('click', (e) => {
    else if (button === '.') {
       // Shift to decimal mode
    }
-   else if (button === '+') {
+   else if (button === '+' || button === '-' || button === '*' || button === '/') {
       // change state
-      state = 'add'
+      switch(button) {
+         case '+':
+         state = 'add'
+         break
+         case '-':
+         state = 'sub'
+         break
+         case '*':
+         state = 'mul'
+         break
+         case '/':
+         state = 'div'
+         break
+      }
       app.num(numBuffer)
       numA = num
       numBuffer = []
@@ -42,15 +55,33 @@ var e = data.addEventListener('click', (e) => {
       console.log('numA is : ', numA)
    }
    else if (button === '=') {
-      state = 'equal'
       app.num(numBuffer)
       numB = num
       numBuffer = []
       app.render(num)
-      app.add()
-      console.log('numB is : ', numB)
-   }
 
+      switch(state) {
+         case 'add':
+         app.add()
+         break
+         case 'sub':
+         app.sub()
+         break
+         case 'mul':
+         app.mul()
+         break
+         case 'div':
+         app.div()
+         break
+      }
+      state = 'equal'
+   }
+   else if (button === 'CE'){
+      state = 'initial'
+      numA = 0
+      numB = 0
+      app.render(numA)
+   }
 })
 
 var app = {
@@ -74,6 +105,18 @@ var app = {
    },
    add: () => {
       answer = numA + numB
+      app.render(answer)
+   },
+   sub: () => {
+      answer = numA - numB
+      app.render(answer)
+   },
+   mul: () => {
+      answer = numA * numB
+      app.render(answer)
+   },
+   div: () => {
+      answer = numA / numB
       app.render(answer)
    },
    // Update the scratchpad
