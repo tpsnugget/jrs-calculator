@@ -18,3 +18,22 @@
 # Version 5:
    Add in CE functionality. DONE.
    Add in -, *, and /. DONE.
+   Negative and decimal answers work too even though I have not added in the functionality
+      for the user to choose those options from the keyboard.
+
+# Version 5:
+   - Add Square Root, %, inverse. DONE
+
+
+Functionality to add:
+   MC
+   MR
+   M+
+   M-
+   + / -
+   Decimals
+
+
+
+Cleanup Items:
+   Move display in scratchpad to the right side

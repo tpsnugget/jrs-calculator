@@ -24,35 +24,69 @@ var e = data.addEventListener('click', (e) => {
       // 1 is in the ones column
       // 12 one moves to tens column and 2 is in ones column
       // 123 one moves to hundreds, two to tens, 3 to ones column
-         numBuffer.push(Number(button))
-         app.num(numBuffer)
-         app.render(num)
-         console.log('I am in the number section')
+      numBuffer.push(Number(button))
+      app.num(numBuffer)
+      app.render(num)
+      console.log('I am in the number section')
    }
    else if (button === '.') {
       // Shift to decimal mode
    }
+   //===========================================================================
+   // These are one number functions
+   else if (button === 'Root' || button === '%' || button === '1 / x') {
+      // change state
+      switch (button) {
+         case 'Root':
+            state = 'Root'
+            break
+         case '%':
+            state = '%'
+            break
+         case '1 / x':
+            state = '1 / x'
+            break
+      }
+      app.num(numBuffer)
+      numA = num
+      numBuffer = []
+
+      switch(button) {
+         case 'Root':
+         app.root()
+         break
+         case '%':
+         app.percent()
+         break
+         case '1 / x':
+         app.inverse()
+         break
+      }
+
+      state = 'initial'
+   }
+   //===========================================================================
+   // These are two number operations
    else if (button === '+' || button === '-' || button === '*' || button === '/') {
       // change state
-      switch(button) {
+      switch (button) {
          case '+':
-         state = 'add'
-         break
+            state = 'add'
+            break
          case '-':
-         state = 'sub'
-         break
+            state = 'sub'
+            break
          case '*':
-         state = 'mul'
-         break
+            state = 'mul'
+            break
          case '/':
-         state = 'div'
-         break
+            state = 'div'
+            break
       }
       app.num(numBuffer)
       numA = num
       numBuffer = []
       app.render(numA)
-      console.log('numA is : ', numA)
    }
    else if (button === '=') {
       app.num(numBuffer)
@@ -60,23 +94,23 @@ var e = data.addEventListener('click', (e) => {
       numBuffer = []
       app.render(num)
 
-      switch(state) {
+      switch (state) {
          case 'add':
-         app.add()
-         break
+            app.add()
+            break
          case 'sub':
-         app.sub()
-         break
+            app.sub()
+            break
          case 'mul':
-         app.mul()
-         break
+            app.mul()
+            break
          case 'div':
-         app.div()
-         break
+            app.div()
+            break
       }
       state = 'equal'
    }
-   else if (button === 'CE'){
+   else if (button === 'CE') {
       state = 'initial'
       numA = 0
       numB = 0
@@ -117,6 +151,18 @@ var app = {
    },
    div: () => {
       answer = numA / numB
+      app.render(answer)
+   },
+   root: () => {
+      answer = Math.pow(numA, 1/2)
+      app.render(answer)
+   },
+   percent: () => {
+      answer = numA / 100
+      app.render(answer)
+   },
+   inverse: () => {
+      answer = 1 / numA
       app.render(answer)
    },
    // Update the scratchpad
